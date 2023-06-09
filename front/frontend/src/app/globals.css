@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "Inder";
+    src: local(Inder-Regular) url(../../public/Inder/Inder-Regular.ttf);
+    font-weight: 700;
+}
+
+@layer base{
+    .font-inder{
+        font-family: "Inder", sans-serif;
+        color: #6E77EE;
+    }
+}
+
+
+.bg-blue-guardians{
+    background-color: #6E77EE;
+}
+.bg-blue-guardians-card{
+    background-color: #6e76ee63;
+}
+
+
+.button-blue-guardians{
+    background-color: #6E77EE;
+    color: white;
+    border-radius: 10px;
+}
