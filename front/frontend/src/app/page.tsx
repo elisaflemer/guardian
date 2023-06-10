@@ -2,16 +2,16 @@ import Image from 'next/image'
 import Login from './login/login'
 
 
-
 //dev
-import ProfileUser from './profile_user/profile_user'
+
+import Profile from './profile_student/profile_student'
 
 
 export default function Home() {
   return (
     <main>
       <div>
-        <ProfileUser></ProfileUser>
+        <Profile></Profile>
       </div>
     </main>
   )
