@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/feed/new_numbers.jsx", "src/app/feed/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/feed/new_numbers.jsx", "src/app/feed/page.jsx", "src/app/global_components/searchbar.jsx", "src/app/table_student/table.jsx", "src/app/global_components/profile.jsx", "src/app/profile_student/page.jsx"],
   "exclude": ["node_modules"]
 }
