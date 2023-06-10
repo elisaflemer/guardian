@@ -70,12 +70,6 @@ Sabendo da segurança que a blockchain proporciona, com criptografia de dados, a
 Além disso, estudos apontam que casos de violência nas escolas, atualmente são comunicados ou identificáveis pelas redes sociais. Neste sentido, notou-se como um ponto de vulnerabilidade que precisava ser atendido pela solução, na qual traduziu-se no  uso de inteligência artificial para analisar os perfis dos jovens e adolescentes nas redes sociais, buscando conteúdos que pudessem refletir posteriormente em possíveis casos de risco, como bullying, ataques e outros.
 <br><br>
 
-## 📄 Análise de mercado
-descrever cenário, problema e fontes de pesquisa
-
-## → Value Preposition Canvas
- Value Proposition Canvas é um template de negócios que ajuda a entender o valor da sua solução para a empresa, englobando seus pontos fortes e principalmente, como esses ajudam a resolver dores do cliente. Assim, para análise de forma mais profunda da viabilidade, aplicabilidade e valor do produto proposto, realizou-se o preenchimento do documento. É possível visualizar a proposta de valor do projeto na imagem a seguir:
-
 -----------------
 
 ## 📁 Estrutura de pastas
@@ -98,7 +92,7 @@ Dentre os arquivos presentes na raiz do projeto, definem-se:
 
 <li><b>blockchain:</b> possui o código fonte para a produção e configuração do sistema de blockchain do projeto, que é responsável pela segurança dos dados gerados e armazenados. Esse desenvolvido em Solidity.
 
-<li> <b>ai:</b> este arquivo trata-se da produção e configuração do sistema de inteligência artificial do projeto, que é responsável pela análise dos dados gerados e armazenados. Esse desenvolvido em Python, usando do modelo Light GBM e datasets exemplares do Kaggle.
+<li> <b>ai:</b> este arquivo trata-se da produção e configuração do sistema de inteligência artificial do projeto, que é responsável pela análise dos dados gerados e armazenados. Esse desenvolvido em Python, usando do modelo Naive Bayes e datasets exemplares do Kaggle.
 </lu>
 
 </br>
@@ -109,9 +103,6 @@ Dentre os arquivos presentes na raiz do projeto, definem-se:
 
 Um guia para a execução desse projeto pode ser encontrado no conteúdo do vídeo a seguir:
 <a>Vídeo e apresentação</a>
-
-
-# Referências
 
 
 # 📋 Licença/License
