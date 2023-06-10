@@ -3,14 +3,14 @@ import Login from './login/login'
 
 
 //dev
-import Feed from './feed/feed'
+import Report from './report_student/report'
 
 
 export default function Home() {
   return (
     <main>
       <div>
-        <Feed></Feed>
+        <Report></Report>
       </div>
     </main>
   )

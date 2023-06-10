@@ -2,6 +2,7 @@ import Searchbar from "../global_components/searchbar"
 import NewAlerts from "./new_numbers"
 import Card from "./cards"
 import Navbar from "../global_components/navbar"
+import Call from "../global_components/call"
 
 export default function Feed() {
 // numbers of new alerts
@@ -24,6 +25,7 @@ let number2 = 10
 <p className="py-1  text-xs w-6 flex text-center "> Novas denúncias </p>
 <div className="w-20"></div>
 <p className="py-1  text-xs w-6 flex text-center "> Novos achados </p>
+<Call></Call>
 </div>
 
             <div className="flex justify-center">
@@ -41,9 +43,6 @@ let number2 = 10
             <div>
                 <Card title={titleAlert} description={descriptionAlert}></Card>
             </div>
-
-
-
 
 <Navbar></Navbar>
         </main>
