@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation'
 import WalletContext from "@/context/WalletContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 const ConnectWallet = () => {
   const {walletAddress, setWalletAddress, walletIsConnected, setWalletIsConnected} = useContext(WalletContext)

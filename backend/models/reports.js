@@ -9,6 +9,10 @@ const reportSchema = mongoose.Schema(
     alunoEndereco: {
       type: String,
     },
+    alunoNome: {
+      type: String,
+      required: [true, "Please add a text value"],
+    },
     relato: {
       type: String,
       required: [true, "Please add a text value"],

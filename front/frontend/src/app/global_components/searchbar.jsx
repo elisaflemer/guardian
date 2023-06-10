@@ -5,8 +5,12 @@ import { ethers } from "ethers";
 import Aluno from "../../../contracts/Aluno.json";
 import AlunoFactory from "../../../contracts/AlunoFactory.json";
 
-export default function Searchbar({setFilteredData, setSearching, data, setData}) {
-
+export default function Searchbar({
+  setFilteredData,
+  setSearching,
+  data,
+  setData,
+}) {
   const provider = new ethers.providers.Web3Provider(ethereum);
   const signer = provider.getSigner();
   useEffect(() => {
@@ -53,7 +57,6 @@ export default function Searchbar({setFilteredData, setSearching, data, setData}
     };
     if (typeof window.ethereum !== "undefined") {
       getStudents();
-      console.log(data);
     }
   });
 
@@ -73,10 +76,20 @@ export default function Searchbar({setFilteredData, setSearching, data, setData}
             }
           }}
         />
-        <Image src="search.svg" width={20} height={20} alt="search" onClick={() => {
-          setSearching(true)
-          setFilteredData(data.filter((item) => item.aluno.name.toLowerCase().includes(search.toLowerCase())));
-        }} />
+        <Image
+          src="search.svg"
+          width={20}
+          height={20}
+          alt="search"
+          onClick={() => {
+            setSearching(true);
+            setFilteredData(
+              data.filter((item) =>
+                item.aluno.name.toLowerCase().includes(search.toLowerCase())
+              )
+            );
+          }}
+        />
       </div>
     </main>
   );
