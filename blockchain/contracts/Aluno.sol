@@ -6,12 +6,11 @@ contract Aluno {
     string public nomeAluno;
     uint public idade;
     string public ano;
-    string public perfilBasico;
 
     event infoAlunoAtualizada(address indexed aluno, string nomeAluno, uint idade, string ano);
 
-    constructor(address _professor) {
-        professor = _professor;
+    constructor() {
+        professor = msg.sender;
     }
 
     modifier onlyProfessor() {

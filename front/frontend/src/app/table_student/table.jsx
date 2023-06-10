@@ -9,7 +9,6 @@ let name = 'Fulano Ciclano'
 
     return(
     <main className="h-screen">
-        <Searchbar></Searchbar>
         <Card alerts={alert} name={name}></Card>
         <Card alerts={false} name={name}></Card>
         <Card alerts={alert} name={name}></Card>
