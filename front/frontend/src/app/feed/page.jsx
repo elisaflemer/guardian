@@ -5,13 +5,15 @@ import NewAlerts from "./new_numbers";
 import Image from "next/image";
 import phone from "../../../public/phone.svg";
 import Card from "./cards";
-import StudentCard from "./card";
 import Navbar from "../global_components/navbar";
+import { useRouter } from 'next/navigation'
 
 
 import { useState } from "react";
 
 export default function Feed() {
+  const router = useRouter()
+
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searching, setSearching] = useState(false);
@@ -28,7 +30,18 @@ export default function Feed() {
           <div className="flex flex-col justify-center items-center w-full">
             <div>
               {filteredData.map((item) => (
-                <StudentCard alerts={false} name={item.aluno.name}></StudentCard>
+                <div
+                className="h-14 mx-2 my-3 bg-zinc-100 rounded-2xl flex flex-row cursor-pointer"
+                onClick={() => {
+                  localStorage.setItem("chosenStudent", item.aluno.address);
+                  router.push('/profile_student')
+                }}
+              >
+                <p className="text-14 text-zinc-700 text-lg w-60 px-5 py-3">
+                  {item.aluno.name}
+                </p>
+
+              </div>
               ))}
             </div>
           </div>
