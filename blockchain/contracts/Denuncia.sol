@@ -23,6 +23,9 @@ contract Denuncia is
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     Counters.Counter private _tokenIdCounter;
 
+    mapping(address => string[]) private _ownerNFTURIs;
+
+
     constructor() ERC721("Denuncia anonima", "DA") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(PAUSER_ROLE, msg.sender);
@@ -42,14 +45,16 @@ contract Denuncia is
         _unpause();
     }
 
-    function safeMint(
-        address to,
-        string memory uri
-    ) public onlyRole(MINTER_ROLE) {
+    function safeMint(address to, string memory uri) public onlyRole(MINTER_ROLE) {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
+        _ownerNFTURIs[to].push(uri);
+    }
+
+    function getOwnerNFTURIs(address owner) public view returns (string[] memory) {
+        return _ownerNFTURIs[owner];
     }
 
     function _beforeTokenTransfer(

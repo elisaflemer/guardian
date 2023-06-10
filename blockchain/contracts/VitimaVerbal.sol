@@ -17,6 +17,8 @@ contract VitimaVerbal is ERC721, ERC721URIStorage, Pausable, AccessControl,
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     Counters.Counter private _tokenIdCounter;
 
+    mapping(address => string[]) private _ownerNFTURIs;
+
     constructor() ERC721("Agressao Verbal(Vitima)", "AVV") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(PAUSER_ROLE, msg.sender);
@@ -40,6 +42,11 @@ contract VitimaVerbal is ERC721, ERC721URIStorage, Pausable, AccessControl,
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
+        _ownerNFTURIs[to].push(uri);
+    }
+
+    function getOwnerNFTURIs(address owner) public view returns (string[] memory) {
+        return _ownerNFTURIs[owner];
     }
 
     function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
