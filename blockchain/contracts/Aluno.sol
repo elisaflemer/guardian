@@ -57,17 +57,11 @@ contract Aluno is IERC721Receiver {
     event TokenRecebido(address indexed aluno, uint256 tokenId);
 
     function onERC721Received(address operator, address from, uint256 tokenId, bytes calldata data) external override returns (bytes4) {
-        // Verifica se o token está sendo transferido pelo contrato tokenERC721
-        // require(msg.sender == address(tokenERC721), "Apenas o contrato tokenERC721 pode chamar a function");
-
-        // Aqui você pode adicionar a lógica para processar o token ERC721 recebido
-        // Por exemplo, você pode atualizar o tokenId no contrato Aluno
         tokenId = tokenId;
 
         // Emitir um evento para indicar que o token foi recebido e processado
         emit TokenRecebido(address(this), tokenId);
 
-        // Retorne o valor mágico esperado para indicar que o contrato aceita tokens ERC721
         return IERC721Receiver.onERC721Received.selector;
     }
 }
