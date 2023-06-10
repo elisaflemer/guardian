@@ -1,0 +1,20 @@
+{
+    "image": "https://ipfs.io/ipfs/QmcJ4DoBMJo5ZPrJU1vsyxH3UK2ecf5JuVqE7ERX4sfbKB",
+    "title": "Agressão verbal",
+    "description": "O aluno ofendeu a professora verbalmente, chamando-a de **** e dizendo que ela não sabia dar aula."
+}
+
+{
+    "image": "https://ipfs.io/ipfs/QmXEmKjCpoZR6wNNNjG8VWMkDHJed5Tdz4CMW1CVfS3Q5c",
+    "title": "Vítima de agressão verbal",
+    "description": "O aluno foi ofendido verbalmente por outro aluno, que fez comentários preconceituosos e o deixou extremamente magoado."
+}
+
+{
+    "image": "https://ipfs.io/ipfs/QmXTvH6uU3N9HkG77oy9RuGVqa5XUVcEzN5aKopcz5QAoh",
+    "title": "Episódio Traumático",
+    "description": "O aluno sofreu abuso quando criança e tem dificuldades de se relacionar com outras pessoas."
+}
+  
+  
+  
