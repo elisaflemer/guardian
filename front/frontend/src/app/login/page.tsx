@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ConnectWallet from './connectWallet';
+import Link from 'next/link';
 export default function Login() {
     return (
         <main className='m-0 h-screen'>
@@ -12,7 +13,7 @@ export default function Login() {
                     <h2 className="center font-inder text-xl font-inder mt-10 mb-5 font-extrabold">LOGIN</h2></div> 
                     <div className="flex flex-col items-center justify-center">
                 <ConnectWallet></ConnectWallet>
-                <button className="button-blue-guardians py-1 px-2 w-4/5">Fazer uma denúncia</button>
+                <Link className='button-blue-guardians py-1 px-2 w-4/5 text-center' href='/report_student'>Fazer uma denúncia</Link>
                 </div>
             </div>
         </main>

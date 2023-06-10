@@ -15,7 +15,7 @@ export default function Searchbar({setFilteredData, setSearching, data, setData}
     let fetched = [];
     const getStudents = async () => {
       const alunoFactoryContract = new ethers.Contract(
-        "0x562427f459CbF2447522D6999411f3189b5D13C6",
+        "0x716ac286aE3D50a8452e2067597Dd9F822ba575d",
         alunoFactoryABI,
         signer
       );

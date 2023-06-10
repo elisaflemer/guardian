@@ -1,12 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const reportsRouter = require('./routes/reports');
 
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
-// app.use('/api/goals', goalsRouter)
-// app.use('/api/users', usersRouter)
-// app.use(errorHandler.errorHandler)
+app.use('/api/reports', reportsRouter)
 
 module.exports = app;
