@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
+// Esses imports são necessários para o contrato funcionar
 import "../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "../node_modules/@openzeppelin/contracts/security/Pausable.sol";
@@ -9,6 +10,7 @@ import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Bu
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
+// O contrato VitimaVerbal é uma extensão do contrato ERC721, que é um contrato de NFT
 contract VitimaVerbal is ERC721, ERC721URIStorage, Pausable, AccessControl, 
     ERC721Burnable, ERC721Enumerable {
     using Counters for Counters.Counter;
@@ -17,8 +19,10 @@ contract VitimaVerbal is ERC721, ERC721URIStorage, Pausable, AccessControl,
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     Counters.Counter private _tokenIdCounter;
 
+    // Esse mapeamento armazena os URIs dos NFTs de cada endereço
     mapping(address => string[]) private _ownerNFTURIs;
 
+    // O construtor do contrato VitimaVerbal
     constructor() ERC721("Agressao Verbal(Vitima)", "AVV") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(PAUSER_ROLE, msg.sender);
@@ -37,6 +41,7 @@ contract VitimaVerbal is ERC721, ERC721URIStorage, Pausable, AccessControl,
         _unpause();
     }
 
+    // Essa função é a que cria o NFT
     function safeMint(address to, string memory uri) public onlyRole(MINTER_ROLE) {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
@@ -45,10 +50,12 @@ contract VitimaVerbal is ERC721, ERC721URIStorage, Pausable, AccessControl,
         _ownerNFTURIs[to].push(uri);
     }
 
+    // Essa função retorna o URI do NFT
     function getOwnerNFTURIs(address owner) public view returns (string[] memory) {
         return _ownerNFTURIs[owner];
     }
 
+    // Essa função retorna o número de NFTs que um endereço possui
     function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
         internal
         whenNotPaused
@@ -57,8 +64,7 @@ contract VitimaVerbal is ERC721, ERC721URIStorage, Pausable, AccessControl,
         super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
 
-    // The following functions are overrides required by Solidity.
-
+    // Essa função exclui um NFT
     function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
         super._burn(tokenId);
     }
