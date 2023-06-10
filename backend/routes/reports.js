@@ -53,7 +53,7 @@ router.post("/", async (req, res, next) => {
 // @desc    Verify report
 // @route   PUT /api/reports/:id
 // @access  Public
-router.put("verify/:id", async (req, res, next) => {
+router.put("/verify/:id", async (req, res, next) => {
   try {
     const report = await Report.findById(req.params.id);
     if (!report) {
