@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "lato": ["Lato", "sans-serif"],
+        "inder": ["Inder", "sans-serif"],
+      },
+      colors:
+      {
+        "purple": "#6E77EE"
+      }
     },
   },
   plugins: [],
